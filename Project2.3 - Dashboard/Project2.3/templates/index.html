@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flask Plotlyjs Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/d3Style.css') }}">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Are you happy? </h1>
+        <p>How happy are people today? How satisfied with their lives are people in different countries? and how does GDP affects live satisfaction? Will people live longer with a higher life satisfaction? </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="well">
+          <h5>COMPARISON:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)">
+            <option value='scatter-life-expetancy'>Life Expectancy vs Life Satisfaction</option>
+            <option value='scatter-gdp'>GDP vs Life Satisfaction</option>
+            <option value='scatter-happiness'>Happiness vs Life Satisfaction</option>
+          </select>
+        </div>
+        <div id="scatter"></div>  
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="bubble"></div>
+    </div>
+  </div>
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+  <script type="text/javascript" src="static/js/config.js"></script>
+  <script type="text/javascript" src="static/js/logic.js"></script>
+
+</body>
+
+</html>
